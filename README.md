@@ -29,7 +29,10 @@ If you move to a custom domain, update the `og:image` and `og:url` tags in `inde
 The form on `scholarship.html` is delivered by [FormSubmit](https://formsubmit.co) to `thepersistfoundation@gmail.com`
 as a formatted email (replying to it replies to the applicant).
 - The **first** submission sends an activation email to that inbox — click **Activate Form** in it, or applications won't be delivered.
-- To change the award amount or deadline, edit the "Scholarship Details" box in `scholarship.html`.
+- The form shows only between the dates in `data-open` / `data-close` on the `#apply` section of `scholarship.html`
+  (currently March 1 – April 30, 2027, Indiana time). Outside those dates visitors see an "opens on…" or "closed" message.
+- To see or test the form at any time, add `?preview` to the address: `https://thepersistfoundation.github.io/scholarship.html?preview`
+- For a new cycle, update those two dates plus the award, dates and pill text near the top of `scholarship.html`.
 
 ## Before launch
 - Confirm a PayPal **Business** account is registered to `thepersistfoundation@gmail.com`, then make a small test donation.

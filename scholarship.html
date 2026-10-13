@@ -50,6 +50,7 @@
         <p class="eyebrow">Scholarships</p>
         <h1>Apply for a Persist Foundation Scholarship</h1>
         <p class="lead">We reduce financial barriers to higher education so students can pursue their academic and professional goals without the burden of overwhelming debt.</p>
+        <p class="award-pill"><strong>$1,000 scholarship</strong> · Applications open March 1 – April 30, 2027</p>
       </div>
     </section>
 
@@ -69,8 +70,9 @@
           <div class="details-card">
             <h3>Scholarship Details</h3>
             <dl>
-              <div><dt>Award amount</dt><dd>To be announced</dd></div>
-              <div><dt>Application deadline</dt><dd>To be announced</dd></div>
+              <div><dt>Award amount</dt><dd>$1,000</dd></div>
+              <div><dt>Applications open</dt><dd>March 1, 2027</dd></div>
+              <div><dt>Deadline</dt><dd>April 30, 2027<br><span class="dd-note">11:59 p.m. Eastern</span></dd></div>
               <div><dt>Time to complete</dt><dd>About 20–30 minutes</dd></div>
             </dl>
             <p class="small-note">Have your school information and a short essay ready. If you are under 18, you'll also need a parent or guardian's name and email. Questions? Email <a href="mailto:thepersistfoundation@gmail.com">thepersistfoundation@gmail.com</a>.</p>
@@ -79,12 +81,19 @@
       </div>
     </section>
 
-    <section class="section section-tint" id="apply">
+    <section class="section section-tint" id="apply" data-open="2027-03-01T00:00:00-05:00" data-close="2027-05-01T00:00:00-04:00">
       <div class="container narrow">
         <div class="section-head">
           <p class="eyebrow dark">Application</p>
           <h2>Scholarship application</h2>
           <p>Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
+        </div>
+
+        <div class="app-status" id="app-status" hidden>
+          <img src="assets/tpf-seal.png" alt="" width="88" height="88">
+          <h3 id="app-status-title"></h3>
+          <p id="app-status-text"></p>
+          <a class="btn btn-green" id="app-status-link" href="mailto:thepersistfoundation@gmail.com?subject=Please%20remind%20me%20when%20scholarship%20applications%20open">Ask us for a reminder</a>
         </div>
 
         <form class="app-form" id="scholarship-form" action="https://formsubmit.co/thepersistfoundation@gmail.com" method="POST" novalidate>

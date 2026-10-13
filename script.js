@@ -125,6 +125,32 @@ if (contactForm) {
 // Scholarship application
 const appForm = document.getElementById("scholarship-form");
 if (appForm) {
+  // Only show the form between the opening date and the deadline (Indiana time).
+  // Add ?preview to the page address to see the form at any time (e.g. for testing).
+  const applySection = document.getElementById("apply");
+  const opens = new Date(applySection.dataset.open);
+  const closes = new Date(applySection.dataset.close);
+  const now = new Date();
+  const preview = new URLSearchParams(location.search).has("preview");
+  if (!preview && (now < opens || now >= closes)) {
+    const status = document.getElementById("app-status");
+    const fmt = (d) => d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "America/Indiana/Indianapolis" });
+    const lastDay = new Date(closes.getTime() - 1);
+    if (now < opens) {
+      document.getElementById("app-status-title").textContent = `Applications open ${fmt(opens)}`;
+      document.getElementById("app-status-text").textContent =
+        `The application will appear here on ${fmt(opens)} and stay open until ${fmt(lastDay)} at 11:59 p.m. Eastern. Come back then — and start thinking about your essay!`;
+    } else {
+      document.getElementById("app-status-title").textContent = "Applications are closed";
+      document.getElementById("app-status-text").textContent =
+        `The deadline was ${fmt(lastDay)}. Thank you to everyone who applied. Email us to hear when the next cycle opens.`;
+      document.getElementById("app-status-link").textContent = "Email us";
+    }
+    status.hidden = false;
+    appForm.hidden = true;
+    applySection.querySelector(".section-head p:last-child").hidden = true;
+  }
+
   const appNote = document.getElementById("app-note");
   const guardian = document.getElementById("guardian");
   const guardianInputs = guardian.querySelectorAll("input");
