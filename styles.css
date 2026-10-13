@@ -269,6 +269,30 @@ textarea { resize: vertical; }
 .contact-list strong { font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: var(--olive); }
 .contact-list a { font-weight: 600; color: var(--green-900); word-break: break-word; }
 
+/* Founder ---------------------------------------------------------------- */
+.founder-section { background: var(--cream); border-top: 1px solid rgba(7, 51, 13, .08); }
+.founder-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.founder-photo { position: relative; max-width: 380px; width: 100%; justify-self: center; }
+.founder-photo::before {
+  content: ""; position: absolute; inset: 1.2rem -1.2rem -1.2rem 1.2rem; border-radius: 24px;
+  border: 3px solid var(--gold);
+}
+.founder-monogram, .founder-photo img {
+  position: relative; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(245, 210, 122, .25), transparent 55%),
+    linear-gradient(160deg, var(--green-700), var(--green-900));
+  display: grid; place-items: center; width: 100%; object-fit: cover;
+}
+.founder-monogram span {
+  font-family: var(--font-serif); font-size: clamp(4rem, 10vw, 7rem); color: var(--gold); letter-spacing: .05em;
+}
+.founder-title { font-weight: 700; color: var(--olive); text-transform: uppercase; letter-spacing: .14em; font-size: .85rem; margin-top: -.6rem; }
+.founder-quote {
+  margin: 1.6rem 0 0; padding-left: 1.2rem; border-left: 5px solid var(--gold);
+  font-family: var(--font-serif); font-style: italic; font-size: 1.6rem; color: var(--green-900);
+}
+
 /* Gallery ---------------------------------------------------------------- */
 .gallery-section { background: var(--white); }
 .album + .album { margin-top: 3.5rem; }
@@ -426,7 +450,8 @@ textarea { resize: vertical; }
   .site-nav a:not(.btn)::after { display: none; }
   .site-nav .btn { margin-top: 1rem; }
 
-  .hero-grid, .two-col, .donate-grid { grid-template-columns: 1fr; }
+  .hero-grid, .two-col, .donate-grid, .founder-grid { grid-template-columns: 1fr; }
+  .founder-photo { max-width: 280px; }
   .hero-grid { text-align: center; }
   .hero-seal { order: -1; width: min(70%, 320px); }
   .lead { margin-inline: auto; }
