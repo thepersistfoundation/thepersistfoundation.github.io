@@ -25,6 +25,10 @@ If you move to a custom domain, update the `og:image` and `og:url` tags in `inde
   (see the hidden `business` field on the donate form in `index.html`). Donors can choose a one-time or monthly gift.
 - To use a PayPal hosted button instead, replace the `business` hidden input with `<input type="hidden" name="hosted_button_id" value="...">`.
 
+## Photo gallery
+Photos live in `assets/gallery/` and are listed in the `#gallery` section of `index.html` (one `<figure>` each, with alt text and a caption).
+Resize photos to about 1600px wide and strip location data before adding them. Add `g-wide` to a figure to make it span two columns.
+
 ## Scholarship applications
 The form on `scholarship.html` is delivered by [FormSubmit](https://formsubmit.co) to `thepersistfoundation@gmail.com`
 as a formatted email (replying to it replies to the applicant).

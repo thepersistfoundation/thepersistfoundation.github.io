@@ -210,4 +210,34 @@ if (appForm) {
   });
 }
 
+// Photo gallery lightbox
+const lightbox = document.getElementById("lightbox");
+if (lightbox && typeof lightbox.showModal === "function") {
+  const items = [...document.querySelectorAll(".g-item")];
+  const lbImg = lightbox.querySelector("img");
+  const lbCap = lightbox.querySelector("figcaption");
+  let current = 0;
+
+  function show(i) {
+    current = (i + items.length) % items.length;
+    const img = items[current].querySelector("img");
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = items[current].querySelector("figcaption").textContent;
+  }
+
+  items.forEach((item, i) => item.querySelector(".g-open").addEventListener("click", () => {
+    show(i);
+    lightbox.showModal();
+  }));
+  lightbox.querySelector(".lb-close").addEventListener("click", () => lightbox.close());
+  lightbox.querySelector(".lb-prev").addEventListener("click", () => show(current - 1));
+  lightbox.querySelector(".lb-next").addEventListener("click", () => show(current + 1));
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.close(); });
+  lightbox.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
+  });
+}
+
 document.getElementById("year").textContent = new Date().getFullYear();
