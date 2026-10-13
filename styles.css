@@ -271,11 +271,15 @@ textarea { resize: vertical; }
 
 /* Gallery ---------------------------------------------------------------- */
 .gallery-section { background: var(--white); }
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 340px; gap: 1rem; }
+.album + .album { margin-top: 3.5rem; }
+.album-head { margin-bottom: 1.2rem; border-left: 5px solid var(--gold); padding-left: 1rem; }
+.album-head h3 { font-family: var(--font-serif); font-size: 1.6rem; color: var(--green-900); margin-bottom: .2rem; }
+.album-head p { margin: 0; color: var(--muted); }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: .9rem; }
 .g-item { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; background: var(--green-900); }
-.g-wide { grid-column: span 2; }
+.g-feature { grid-column: span 2; grid-row: span 2; }
 .g-open { display: block; width: 100%; height: 100%; padding: 0; border: 0; cursor: zoom-in; background: none; }
-.g-open img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transition: transform .5s ease; }
+.g-open img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; transition: transform .5s ease; }
 .g-item:hover img { transform: scale(1.04); }
 .g-item figcaption {
   position: absolute; left: 0; right: 0; bottom: 0; pointer-events: none;
@@ -404,6 +408,7 @@ textarea { resize: vertical; }
 
 /* Responsive ------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
   .values, .involve-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -428,9 +433,9 @@ textarea { resize: vertical; }
   .hero-actions { justify-content: center; }
   .card-grid { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .g-wide { grid-column: auto; }
-  .g-open img { height: auto; aspect-ratio: 4 / 3; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: .6rem; }
+  .g-item figcaption { display: none; }
+  .g-feature figcaption { display: block; }
   .lightbox figure { max-width: calc(100vw - 2rem); }
   .lb-nav { top: auto; bottom: 1rem; translate: none; }
 }
