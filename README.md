@@ -1,6 +1,6 @@
 # The Persist Foundation — Website
 
-Live site: https://donaldval1.github.io/ThePersistFoundation/
+Live site: https://thepersistfoundation.github.io/
 
 Static one-page site for The Persist Foundation (*Until I Succeed!*).
 
@@ -14,8 +14,8 @@ Static one-page site for The Persist Foundation (*Until I Succeed!*).
 Open `index.html` in a browser, or run `python3 -m http.server` and go to http://localhost:8000.
 
 ## Hosting
-Served by GitHub Pages from the `master` branch (root folder) at
-https://donaldval1.github.io/ThePersistFoundation/ — every push to `master` updates the live site within a minute or two.
+Served by GitHub Pages from the `main` branch of thepersistfoundation/thepersistfoundation.github.io at
+https://thepersistfoundation.github.io/ — every push to `main` updates the live site within a minute or two.
 If you move to a custom domain, update the `og:image` and `og:url` tags in `index.html`.
 
 ## Contact & donations
