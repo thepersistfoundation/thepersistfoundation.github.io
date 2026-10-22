@@ -1,6 +1,6 @@
 # The Persist Foundation — Website
 
-Live site: https://thepersistfoundation.github.io/
+Live site: https://thepersistfoundation.org/
 
 Static one-page site for The Persist Foundation (*Until I Succeed!*).
 
@@ -15,9 +15,10 @@ Static one-page site for The Persist Foundation (*Until I Succeed!*).
 Open `index.html` in a browser, or run `python3 -m http.server` and go to http://localhost:8000.
 
 ## Hosting
-Served by GitHub Pages from the `main` branch of thepersistfoundation/thepersistfoundation.github.io at
-https://thepersistfoundation.github.io/ — every push to `main` updates the live site within a minute or two.
-If you move to a custom domain, update the `og:image` and `og:url` tags in `index.html`.
+Served by GitHub Pages from the `main` branch of thepersistfoundation/thepersistfoundation.github.io at the custom
+domain https://thepersistfoundation.org/ (set by the `CNAME` file; DNS is managed at Wix). The old
+https://thepersistfoundation.github.io/ address redirects there. Every push to `main` updates the live site within a minute or two.
+If the domain ever changes, update `CNAME`, the `og:image` / `og:url` tags and the `_next` field in `scholarship.html`.
 
 ## Contact & donations
 - Contact email: `thepersistfoundation@gmail.com` (the contact form opens the visitor's email app addressed to it).
@@ -35,7 +36,7 @@ as a formatted email (replying to it replies to the applicant).
 - The **first** submission sends an activation email to that inbox — click **Activate Form** in it, or applications won't be delivered.
 - The form shows only between the dates in `data-open` / `data-close` on the `#apply` section of `scholarship.html`
   (currently March 1 – April 30, 2027, Indiana time). Outside those dates visitors see an "opens on…" or "closed" message.
-- To see or test the form at any time, add `?preview` to the address: `https://thepersistfoundation.github.io/scholarship.html?preview`
+- To see or test the form at any time, add `?preview` to the address: `https://thepersistfoundation.org/scholarship.html?preview`
 - For a new cycle, update those two dates plus the award, dates and pill text near the top of `scholarship.html`.
 
 ## Before launch
